@@ -1,7 +1,7 @@
 # Notes App Backend
 
 **🚀 Live API:** [https://notes-app-1-k021.onrender.com/api/notes](https://notes-app-1-k021.onrender.com/api/notes)  
-**📘 Postman Docs:** [View Documentation](https://documenter.getpostman.com/view/50871368/2sBXqDs3bf)
+**📘 Postman Docs:** [https://documenter.getpostman.com/view/50871368/2sBXqDs3bf](https://documenter.getpostman.com/view/50871368/2sBXqDs3bf)
 
 A simple RESTful API for a notes application built with Node.js and Express.
 
