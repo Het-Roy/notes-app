@@ -65,9 +65,33 @@ const AllNotes = async (req, res) => {
     }
 };
 
+const GetSingleNote = async (req, res) => {
+    try {
+        const note = await Note.findById(req.params.id);
+        if (!note) {
+            return res.status(404).json({
+                success: false,
+                message: "Note not found"
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: "Note fetched successfully",
+            data: note
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch note"
+        });
+    }
+};
+    
+
 
 module.exports = {
     CreateSingleNote,
     CreateBulkNotes,
-    AllNotes
+    AllNotes,
+    GetSingleNote
 };
