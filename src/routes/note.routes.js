@@ -5,7 +5,8 @@ const {
     AllNotes,
     GetSingleNote,
     ReplaceNote,
-    UpdateSingleNote
+    UpdateSingleNote,
+    DeleteSingleNote
 } = require('../controllers/note.controllers');
 
 
@@ -15,5 +16,6 @@ router.get('/', AllNotes);
 router.get('/:id', GetSingleNote);
 router.put('/:id', ReplaceNote);
 router.patch('/:id', UpdateSingleNote);
+router.delete('/:id', DeleteSingleNote);
 
 module.exports = router;
