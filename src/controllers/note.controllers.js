@@ -113,6 +113,33 @@ const ReplaceNote = async (req, res) => {
     }
 };
 
+const UpdateSingleNote = async (req, res) => {
+    try {
+        const note = await Note.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        );
+        if (!note) {
+            return res.status(404).json({
+                success: false,
+                message: "Note not found"
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: "Note updated successfully",
+            data: note
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Failed to update note"
+        });
+    }
+};
+
+
 
 
 module.exports = {
@@ -120,5 +147,6 @@ module.exports = {
     CreateBulkNotes,
     AllNotes,
     GetSingleNote,
-    ReplaceNote
+    ReplaceNote,
+    UpdateSingleNote
 };
